@@ -4,7 +4,7 @@ sn=args[2]
 fbas=args[3]
 setwd(local)
 n=as.numeric(sn); adress=fbas
-fdata=read.table(adress,header=F)
+fdata=readLines(adress)
 num=nrow(fdata)
 newdata=data.frame(id=fdata[seq(1,num,4),1],seq=fdata[seq(2,num,4),1],score=fdata[seq(4,num,4),1])
 newdata=newdata[!grepl("N",newdata[,2]),]
